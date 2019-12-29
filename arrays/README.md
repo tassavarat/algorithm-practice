@@ -53,3 +53,22 @@ grid = [['.', '.', '.', '.', '2', '.', '.', '9', '.'],
         ['.', '1', '.', '2', '.', '.', '.', '.', '.'],
         ['.', '2', '.', '.', '3', '.', '.', '.', '.']]
 ```
+
+# [is_crypt_solution](./is_crypt_solution.py)
+Given array of strings `crypt` and array containing mapping of letters and digits `solution`, check whether decoded `crypt[0] + crypt[1] == crypt[2]`. Leading zeroes are invalid.
+
+## Example
+```
+crypt = ["SEND", "MORE", "MONEY"]
+
+solution = [['O', '0'],
+            ['M', '1'],
+            ['Y', '2'],
+            ['E', '5'],
+            ['N', '6'],
+            ['D', '7'],
+            ['R', '8'],
+            ['S', '9']]
+
+is_crypt_solution(crypt, solution) = true
+```
