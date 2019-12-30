@@ -18,3 +18,10 @@ Given 2 numbers represented in linked lists. Add their values together and retur
 ## Example
 * For `a = [9876, 5432, 1999]` and `b = [1, 8001]`, the output should be `add_two_huge_numbers(a, b) = [9876, 5434, 0]`
 * For `a = [123, 4, 5]` and `b = [100, 100, 100]`, the output should be `add_two_huge_numbers(a, b) = [223, 104, 105]`
+
+# [merge_two_linked_lists](./merge_two_linked_lists.c)
+Given two singly linked lists sorted in ascending order, merge them together into a single linked list that is sorted in ascending order.
+
+## Example
+* For `l1 = [1, 2, 3]` and `l2 = [4, 5, 6]`, the output should be `merge_two_linked_lists(l1, l2) = [1, 2, 3, 4, 5, 6]`
+* For `l1 = [1, 1, 2, 4]` and `l2 = [0, 3, 5]`, the output should be `merge_two_linked_lists(l1, l2) = [0, 1, 1, 2, 3, 4, 5]`
