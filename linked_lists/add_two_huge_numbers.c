@@ -70,14 +70,18 @@ list_integer *add_two_huge_numbers(list_integer *a, list_integer *b)
         if (cur_a && cur_b)
         {
             sum = cur_a->value + cur_b->value + sum / 10000;
+	    cur_a = cur_a->next;
+	    cur_b = cur_b->next;
         }
         else if (cur_a)
         {
             sum = cur_a->value + sum / 10000;
+	    cur_a = cur_a->next;
         }
         else if (cur_b)
         {
             sum = cur_b->value + sum / 10000;
+	    cur_b = cur_b->next;
         }
         else
         {
@@ -88,10 +92,6 @@ list_integer *add_two_huge_numbers(list_integer *a, list_integer *b)
             c = cur = append_node(NULL, sum % 10000);
         else
             cur = append_node(cur, sum % 10000);
-        if (cur_a)
-            cur_a = cur_a->next;
-        if (cur_b)
-            cur_b = cur_b->next;
     }
     return (reverse_list(c));
 }
