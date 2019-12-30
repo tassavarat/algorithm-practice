@@ -26,7 +26,7 @@ list_integer *append_node(list_integer *head, int value)
 
 /**
  * is_list_palindrome - Determines whether list is a palindrome
- * @l: Pointer to head of list
+ * @head: Pointer to head of list
  *
  * Return: true if list is palindrome, otherwise false
  */
