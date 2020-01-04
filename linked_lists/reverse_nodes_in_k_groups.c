@@ -1,5 +1,14 @@
 #include "linked_list.h"
 
+/**
+ * reverse_list - Reverses a linked list
+ * @cur: Iterates through linked list
+ * @tmp: One node ahead of cur
+ * @rev: Node cur will point to
+ * @head: Head of linked list
+ * @i: Current iteration
+ * @k: Amount of nodes to reverse at a time
+ */
 void reverse_list(list_integer **cur, list_integer **tmp, list_integer **rev,
 	list_integer **head, int i, int k)
 {
@@ -23,6 +32,13 @@ void reverse_list(list_integer **cur, list_integer **tmp, list_integer **rev,
 	*cur = *tmp;
 }
 
+/**
+ * link_groups - Links the groups of nodes together
+ * @i: Current iteration
+ * @end: Node at the end of a group
+ * @tmp_end: End node one iteration ahead
+ * @check: Iterating node
+ */
 void link_groups(int i, list_integer **end, list_integer **tmp_end,
 	list_integer **check)
 {
@@ -40,6 +56,13 @@ void link_groups(int i, list_integer **end, list_integer **tmp_end,
 		printf("link_groups tmp_end->value: %d\n", (*tmp_end)->value);
 }
 
+/**
+ * group_left - Checks if linked list contains enough nodes left to reverse
+ * @check: Iterating node
+ * @k: Amount of nodes to reverse at a time
+ *
+ * Return: 1 if enough nodes, otherwise 0
+ */
 int group_left(list_integer **check, int k)
 {
 	int i;
@@ -56,6 +79,14 @@ int group_left(list_integer **check, int k)
 	return (1);
 }
 
+/**
+ * reverse_nodes_in_k_groups - Reverses nodes k groups at a time
+ * @l: Pointer to head of linked list being reversed
+ * @k: Amount of nodes to reverse at a time
+ *
+ * If there aren't enough nodes left the remaining nodes remain unaltered
+ * Return: Pointer to head of reversed linked list
+ */
 list_integer *reverse_nodes_in_k_groups(list_integer *l, int k)
 {
 	int i, good_groups;
