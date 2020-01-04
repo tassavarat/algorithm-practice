@@ -25,3 +25,11 @@ Given two singly linked lists sorted in ascending order, merge them together int
 ## Example
 * For `l1 = [1, 2, 3]` and `l2 = [4, 5, 6]`, the output should be `merge_two_linked_lists(l1, l2) = [1, 2, 3, 4, 5, 6]`
 * For `l1 = [1, 1, 2, 4]` and `l2 = [0, 3, 5]`, the output should be `merge_two_linked_lists(l1, l2) = [0, 1, 1, 2, 3, 4, 5]`
+
+# [reverse_nodes_in_k_groups](./reverse_nodes_in_k_groups.c)
+Given a linked list `l`, reverse its nodes `k` at a time and return the modified list. `k` is a positive integer that is less than or equal to the length of `l`. If the number of nodes in the linked list is not a multiple of k, then the nodes that are left at the end should remain as is. The values should node be altered only the pointers.
+
+## Example
+* For `l = [1, 2, 3, 4, 5]` and `k = 2`, the output should be `reverse_nodes_in_k_groups(l, k) = [2, 1, 4, 3, 5]`
+* For `l = [1, 2, 3, 4, 5]` and `k = 1`, the output should be `reverse_nodes_in_k_groups(l, k) = [1, 2, 3, 4, 5]`
+* For `l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]` and `k = 3`, the output should be `reverse_nodes_in_k_groups(l, k) = [3, 2, 1, 6, 5, 4, 9, 8, 7, 10, 11]`
