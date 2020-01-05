@@ -9,7 +9,7 @@
  * @i: Current iteration
  * @k: Amount of nodes to reverse at a time
  */
-void reverse_list(list_integer **cur, list_integer **tmp, list_integer **rev,
+void reverse_list_g(list_integer **cur, list_integer **tmp, list_integer **rev,
 	list_integer **head, int i, int k)
 {
 	if (i == k)
@@ -98,7 +98,7 @@ list_integer *reverse_nodes_in_k_groups(list_integer *l, int k)
 			}
 			link_groups(i, &end, &tmp_end, &check);
 		}
-		reverse_list(&cur, &tmp, &rev, &head, i, k);
+		reverse_list_g(&cur, &tmp, &rev, &head, i, k);
 		++i;
 	}
 	if (good_groups)

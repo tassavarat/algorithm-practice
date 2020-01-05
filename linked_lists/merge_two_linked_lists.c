@@ -1,3 +1,5 @@
+#include "linked_list.h"
+
 /**
  * append_node - Creates and links new node to end of linked list
  * @head: Pointer to node in linked list

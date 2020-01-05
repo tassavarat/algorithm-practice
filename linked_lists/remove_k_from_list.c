@@ -1,3 +1,5 @@
+#include "linked_list.h"
+
 /**
  * remove_k_from_list - Removes all nodes containing k from list
  * @l: Pointer to head node

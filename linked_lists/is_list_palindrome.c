@@ -1,3 +1,5 @@
+#include "linked_list.h"
+
 /**
  * reverse_list - Reverses linked list
  * @l: Pointer to head of linked list
