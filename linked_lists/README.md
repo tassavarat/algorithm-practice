@@ -33,3 +33,10 @@ Given a linked list `l`, reverse its nodes `k` at a time and return the modified
 * For `l = [1, 2, 3, 4, 5]` and `k = 2`, the output should be `reverse_nodes_in_k_groups(l, k) = [2, 1, 4, 3, 5]`
 * For `l = [1, 2, 3, 4, 5]` and `k = 1`, the output should be `reverse_nodes_in_k_groups(l, k) = [1, 2, 3, 4, 5]`
 * For `l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]` and `k = 3`, the output should be `reverse_nodes_in_k_groups(l, k) = [3, 2, 1, 6, 5, 4, 9, 8, 7, 10, 11]`
+
+# [rearrange_last_n](./rearrange_last_n.c)
+Given a singly linked list of integers `l` and positive integer `n`, move the last `n` nodes to the beginning of the linked list.
+
+## Example
+* For `l = [1, 2, 3, 4, 5]` and `n = 3`, the output should be `rearrange_last_n(l, n) = [3, 4, 5, 1, 2]`
+* For `l = [1, 2, 3, 4, 5, 6, 7]` and `n = 1`, the output should be `rearrange_last_n(l, n) = [7, 1, 2, 3, 4, 5, 6]`
