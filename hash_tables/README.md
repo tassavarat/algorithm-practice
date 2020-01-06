@@ -1,5 +1,5 @@
 # [grouping_dishes](./grouping_dishes.py)
-Given list of strings `dishes` where first element is name of a dish followed by its ingredient, group dishes by ingredients. Only include ingredients used by more than one dish.
+Given list of strings `dishes` where first element is name of a dish followed by its ingredients, group dishes by ingredients. Only include ingredients used by more than one dish.
 
 ## Example
 ```
