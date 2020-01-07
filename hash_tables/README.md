@@ -28,3 +28,10 @@ grouping_dishes(dishes) =
           ["Onions", "Fried Rice", "Pasta"]]
 
 ```
+
+# [are_following_patterns](./are_following_patterns.py)
+Given lists `strings` and `patterns`, determine whether `strings` follows the sequence given in `patterns`.
+
+## Example
+* For `strings = ["cat", "dog", "dog"]` and `patterns = ["a", "b", "b"]`, the output should be `are_following_patterns(strings, patterns) = true`
+* For `strings = ["cat", "dog", "doggy"]` and `patterns = ["a", "b", "b"]`, the output should be `are_following_patterns(strings, patterns) = false`
