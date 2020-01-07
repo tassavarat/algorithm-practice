@@ -35,3 +35,10 @@ Given lists `strings` and `patterns`, determine whether `strings` follows the se
 ## Example
 * For `strings = ["cat", "dog", "dog"]` and `patterns = ["a", "b", "b"]`, the output should be `are_following_patterns(strings, patterns) = true`
 * For `strings = ["cat", "dog", "doggy"]` and `patterns = ["a", "b", "b"]`, the output should be `are_following_patterns(strings, patterns) = false`
+
+# [contains_close_nums](./contains_close_nums.py)
+Given list of integers `num` and integer `k`, check if the distance of two duplicate values is less than or equal to k.
+
+## Example
+* For `nums = [0, 1, 2, 3, 5, 2]` and `k = 3`, the output should be `contains_close_nums(nums, k) = true`
+* For `nums = [0, 1, 2, 3, 5, 2]` and `k = 2`, the output should be `contains_close_nums(nums, k) = false`
