@@ -14,7 +14,7 @@ def possible_sums(coins, quantity):
     for i in range(len(coins)):
         for c in range(1, quantity[i] + 1):
             tmp_s.add(coins[i] * c)
-            for j in s:
-                tmp_s.add(j + coins[i] * c)
+            for e in s:
+                tmp_s.add(e + coins[i] * c)
         s.update(tmp_s)
     return len(s)
