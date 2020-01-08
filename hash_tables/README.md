@@ -42,3 +42,10 @@ Given list of integers `num` and integer `k`, check if the distance of two dupli
 ## Example
 * For `nums = [0, 1, 2, 3, 5, 2]` and `k = 3`, the output should be `contains_close_nums(nums, k) = true`
 * For `nums = [0, 1, 2, 3, 5, 2]` and `k = 2`, the output should be `contains_close_nums(nums, k) = false`
+
+# [possible_sums](./possible_sums.py)
+Given `coins` and `quantity` lists containing coin values and quanities respectively, find the amount of possible unique sums.
+
+## Example
+* For `coins = [10, 50, 100]` and `quantity = [1, 2, 1]`, the output should be `possible_sums(coins, quantity) = 9`
+* For `coins = [10, 50, 100, 500]` and `quantity = [5, 3, 2, 2]`, the output should be `possible_sums(coins, quantity) = 122`
