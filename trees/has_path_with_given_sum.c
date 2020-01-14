@@ -1,101 +1,99 @@
 #include "trees.h"
 
-stack *push(stack *cur_s, tree_integer *cur)
+/**
+ * push - creates and appends nodes to linked list
+ * @cur_s: pointer to list node
+ * @cur: pointer to binary tree node
+ *
+ * Return: pointer to newly created node or NULL on failure
+ */
+struct stack *push(struct stack *cur_s, struct tree_integer *cur)
 {
-        stack *new;
+	struct stack *new;
 
-        new = malloc(sizeof(stack));
-        new->node = cur;
-        new->next = NULL;
-        if (cur_s)
-        {
-                while (cur_s->next)
-                        cur_s = cur_s->next;
-                cur_s->next = new;
-        }
-        return (new);
-}
-
-stack *pop(stack *cur_s)
-{
-        stack *prev_s;
-
-        prev_s = NULL;
-	if (cur_s)
-	{
+	new = malloc(sizeof(struct stack));
+	if (!new)
+		return (NULL);
+	new->node = cur;
+	new->next = NULL;
+	if (cur_s) {
 		while (cur_s->next)
-		{
-			prev_s = cur_s;
 			cur_s = cur_s->next;
-		}
-		free(cur_s);
-		if (prev_s)
-			prev_s->next = NULL;
+		cur_s->next = new;
 	}
-        return (prev_s);
+	new->prev = cur_s;
+	return (new);
 }
 
-bool has_path_with_given_sum(tree_integer *t, int s)
+/**
+ * pop - removes last node in linked list
+ * @cur_s: pointer to pointer of node
+ *
+ * Return: right child node of node being removed
+ */
+struct tree_integer *pop(struct stack **cur_s)
 {
-        int sum, prev_sum, jumped;
-        tree_integer *cur, *prev;
-        stack *cur_s;
+	struct tree_integer *tmp;
+	struct stack *tmp_s;
 
-	if (t)
-	{
+	tmp = NULL;
+	if (*cur_s) {
+		while ((*cur_s)->next)
+			*cur_s = (*cur_s)->next;
+		tmp = (*cur_s)->node->right;
+		tmp_s = *cur_s;
+		*cur_s = (*cur_s)->prev;
+		free(tmp_s);
+		if (*cur_s)
+			(*cur_s)->next = NULL;
+	}
+	return (tmp);
+}
+
+/**
+ * has_path_with_given_sum - determines if path exists where sum matches
+ * @t: pointer to root node of binary tree
+ * @s: sum to check for
+ *
+ * Description:
+ * sum is value of all nodes along path from root to leaf node
+ * Return: true if sum found otherwise false
+ */
+bool has_path_with_given_sum(struct tree_integer *t, int s)
+{
+	int hop, sum;
+	struct tree_integer *cur;
+	struct stack *cur_s;
+
+	if (t) {
+		hop = 0;
 		sum = t->value;
-		prev_sum = jumped = 0;
 		cur = t;
-		prev = NULL;
 		cur_s = NULL;
-		while (cur && (jumped == 0 || cur->left || cur->right))
-		{
-			printf("cur->value: %d\n", cur->value);
-			printf("before sum: %d\n", sum);
-			printf("prev_sum: %d\n", prev_sum);
-			if (cur->left && cur->right)
-			{
-				// printf("cur->value: %d\n", cur->value);
-				prev_sum += cur->value;
-				jumped = 0;
-				prev = cur->right;
+		while (hop == 0 || cur) {
+			if (cur->left && cur->right) {
+				hop = 0;
 				cur_s = push(cur_s, cur);
+				cur_s->sum = sum;
 				cur = cur->left;
 			}
-			else if (cur->left)
-			{
-				if (!cur_s)
-					prev_sum += cur->value;
+			else if (cur->left) {
 				cur = cur->left;
 			}
-			else if (cur->right)
-			{
-				if (!cur_s)
-					prev_sum += cur->value;
+			else if (cur->right) {
 				cur = cur->right;
 			}
-			else
-			{
+			else {
 				if (sum == s)
 					return (true);
+				hop = 1;
 				if (cur_s)
-					sum = prev_sum;
-				jumped = 1;
-				cur_s = pop(cur_s);
-				if (!cur_s)
-					cur = prev;
-				printf("Jumped\n");
-				printf("####\n");
+					sum = cur_s->sum;
+				cur = pop(&cur_s);
 			}
 			if (cur)
 				sum += cur->value;
-			printf("after sum: %d\n", sum);
-			printf("##########\n");
 		}
-		// printf("after loop cur->value: %d\n", cur->value);
-		printf("after loop sum: %d\n", sum);
-		if (sum == s)
-			return (true);
 	}
 	return (false);
 }
