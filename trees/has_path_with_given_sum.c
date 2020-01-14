@@ -11,7 +11,7 @@ struct stack *push(struct stack *cur_s, struct tree_integer *cur)
 {
 	struct stack *new;
 
-	new = malloc(sizeof(struct stack));
+	new = malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
 	new->node = cur;
