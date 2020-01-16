@@ -16,11 +16,8 @@ struct stack *push(struct stack *cur_s, struct tree_integer *cur)
 		return (NULL);
 	new->node = cur;
 	new->next = NULL;
-	if (cur_s) {
-		while (cur_s->next)
-			cur_s = cur_s->next;
+	if (cur_s)
 		cur_s->next = new;
-	}
 	new->prev = cur_s;
 	return (new);
 }
@@ -38,8 +35,6 @@ struct tree_integer *pop(struct stack **cur_s)
 
 	tmp = NULL;
 	if (*cur_s) {
-		while ((*cur_s)->next)
-			*cur_s = (*cur_s)->next;
 		tmp = (*cur_s)->node->right;
 		tmp_s = *cur_s;
 		*cur_s = (*cur_s)->prev;
@@ -61,18 +56,19 @@ struct tree_integer *pop(struct stack **cur_s)
  */
 bool has_path_with_given_sum(struct tree_integer *t, int s)
 {
-	int hop, sum;
+	bool hop;
+	int sum;
 	struct tree_integer *cur;
 	struct stack *cur_s;
 
 	if (t) {
-		hop = 0;
+		hop = false;
 		sum = t->value;
 		cur = t;
 		cur_s = NULL;
-		while (hop == 0 || cur) {
+		while (hop == false || cur) {
 			if (cur->left && cur->right) {
-				hop = 0;
+				hop = false;
 				cur_s = push(cur_s, cur);
 				cur_s->sum = sum;
 				cur = cur->left;
@@ -86,7 +82,7 @@ bool has_path_with_given_sum(struct tree_integer *t, int s)
 			else {
 				if (sum == s)
 					return (true);
-				hop = 1;
+				hop = true;
 				if (cur_s)
 					sum = cur_s->sum;
 				cur = pop(&cur_s);
