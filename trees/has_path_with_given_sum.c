@@ -33,15 +33,14 @@ struct tree_integer *pop(struct stack **cur_s)
 	struct tree_integer *tmp;
 	struct stack *tmp_s;
 
-	tmp = NULL;
-	if (*cur_s) {
-		tmp = (*cur_s)->node->right;
-		tmp_s = *cur_s;
-		*cur_s = (*cur_s)->prev;
-		free(tmp_s);
-		if (*cur_s)
-			(*cur_s)->next = NULL;
-	}
+	if (!*cur_s)
+		return (NULL);
+	tmp = (*cur_s)->node->right;
+	tmp_s = *cur_s;
+	*cur_s = (*cur_s)->prev;
+	free(tmp_s);
+	if (*cur_s)
+		(*cur_s)->next = NULL;
 	return (tmp);
 }
 
