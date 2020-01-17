@@ -34,5 +34,6 @@ struct stack {
 };
 
 bool has_path_with_given_sum(struct tree_integer *t, int s);
+bool is_tree_symmetric(struct tree_integer *t);
 
 #endif /* TREES_H */
