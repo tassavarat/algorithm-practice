@@ -147,3 +147,16 @@ t = {
 
 is_tree_symmetric(t) = false
 ```
+
+# [find_profession](./find_profession.c)
+For a special family represented as a binary tree where:
+* Every node has two children
+* The left child node of an engineer is an engineer and the right is a doctor
+* The left child node of a doctor is a doctor and the right is an engineer
+* Root node is an engineer
+Find the profession of the node given the level and position
+
+## Example
+* `level = 3` and `pos = 3` `find_profession(level, pos) = "Doctor"`
+* `level = 4` and `pos = 2` `find_profession(level, pos) = "Doctor"`
+* `level = 1` and `pos = 1` `find_profession(level, pos) = "Engineer"`
