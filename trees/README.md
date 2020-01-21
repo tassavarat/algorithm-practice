@@ -160,3 +160,51 @@ Find the profession of the node given the level and position
 * `level = 3` and `pos = 3` `find_profession(level, pos) = "Doctor"`
 * `level = 4` and `pos = 2` `find_profession(level, pos) = "Doctor"`
 * `level = 1` and `pos = 1` `find_profession(level, pos) = "Engineer"`
+
+# [kth_smallest_in_bst](./kth_smallest_in_bst.c)
+Given BST `t`, find `k` smallest element in it.
+
+## Example
+```
+t = {
+    "value": 3,
+    "left": {
+        "value": 1,
+        "left": null,
+        "right": null
+    },
+    "right": {
+        "value": 5,
+        "left": {
+            "value": 4,
+            "left": null,
+            "right": null
+        },
+        "right": {
+            "value": 6,
+            "left": null,
+            "right": null
+        }
+    }
+}
+kth_smallest_in_bst(t, k) = 5
+
+t = {
+    "value": 1,
+    "left": {
+        "value": -1,
+        "left": {
+            "value": -2,
+            "left": null,
+            "right": null
+        },
+        "right": {
+            "value": 0,
+            "left": null,
+            "right": null
+        }
+    },
+    "right": null
+}
+kth_smallest_in_bst(t, k) = -2
+```
