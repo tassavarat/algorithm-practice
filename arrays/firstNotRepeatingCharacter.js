@@ -4,20 +4,20 @@
  *
  * Return: First non-repeating character or '_' if none found
  */
-function firstNotRepeatingCharacter(s) {
-    let obj = {};
-    let c;
-    
-    c = '_';
-    for (i of s) {
-        if (!obj[i]) obj[i] = 1;
-        else obj[i]++;
+function firstNotRepeatingCharacter (s) {
+  const obj = {};
+  let c;
+
+  c = '_';
+  for (const i of s) {
+    if (!obj[i]) obj[i] = 1;
+    else obj[i]++;
+  }
+  for (const [k, v] of Object.entries(obj)) {
+    if (v === 1) {
+      c = k;
+      break;
     }
-    for (let [k, v] of Object.entries(obj)) {
-        if (v == 1) {
-            c = k;
-            break;
-        }
-    }
-    return (c);
+  }
+  return (c);
 }
