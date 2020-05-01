@@ -42,6 +42,19 @@ bool is_subtree(tree_integer *t1, tree_integer *t2)
 }
 
 /**
+ * free_tree - frees binary tree
+ * @tree: root node of tree to free
+ */
+void free_tree(tree_integer *tree)
+{
+	if (!tree)
+		return;
+	free_tree(tree->left);
+	free_tree(tree->right);
+	free(tree);
+}
+
+/**
  * create_node - creates binary tree node
  * @value: int value to store
  *
@@ -88,5 +101,7 @@ int main()
 		puts("t2 is a subtree of t1");
 	else
 		puts("t2 is not a subtree of t1");
+	free_tree(t1);
+	free_tree(t2);
 	return 0;
 }
