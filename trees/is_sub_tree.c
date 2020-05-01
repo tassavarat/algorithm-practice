@@ -1,5 +1,12 @@
 #include "trees.h"
 
+/**
+ * check_subtree - checks t1 and t2 to determine if t2 is subtree of t1
+ * @t1: tree being checked for subtree
+ * @t2: subtree
+ *
+ * Return: true if subtree contained in t1, otherwise false
+ */
 bool check_subtree(tree_integer *t1, tree_integer *t2)
 {
 	if (!t2)
@@ -14,6 +21,13 @@ bool check_subtree(tree_integer *t1, tree_integer *t2)
 	return 1;
 }
 
+/**
+ * is_subtree - traverses t1 and calls check_subtree as needed
+ * @t1: tree being checked for subtree
+ * @t2: subtree
+ *
+ * Return: true if subtree contained in t1, otherwise false
+ */
 bool is_subtree(tree_integer *t1, tree_integer *t2)
 {
 	if (!t1 && !t2)
@@ -27,6 +41,12 @@ bool is_subtree(tree_integer *t1, tree_integer *t2)
 	return 0;
 }
 
+/**
+ * create_node - creates binary tree node
+ * @value: int value to store
+ *
+ * Return: newly created node, NULL on failure
+ */
 tree_integer *create_node(int value)
 {
 	tree_integer *new = malloc(sizeof(*new));
@@ -39,6 +59,11 @@ tree_integer *create_node(int value)
 	return new;
 }
 
+/**
+ * main - entry point
+ *
+ * Return: always 0
+ */
 int main()
 {
 	tree_integer *t1, *t2;
