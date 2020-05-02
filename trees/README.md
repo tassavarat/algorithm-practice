@@ -208,3 +208,44 @@ t = {
 }
 kth_smallest_in_bst(t, k) = -2
 ```
+
+# [is_subtree](./is_subtree.c)
+Given two binary trees `t1` and `t2`, determine whether `t2` is a subtree of `t1`
+
+## Example
+```
+      t1:             t2:
+       5              10
+      / \            /  \
+    10   7          4    6
+   /  \            / \    \
+  4    6          1   2   -1
+ / \    \
+1   2   -1
+is_sub_tree(t1, t2) = true
+
+        t1:            t2:
+         5             10
+       /   \          /  \
+     10     7        4    6
+   /    \           / \    \
+  4     6          1   2   -1
+ / \   /
+1   2 -1
+is_sub_tree(t1, t2) = false
+```
+
+# [restore_binary_tree](./restore_binary_tree.py)
+Given array of values for preorder and inorder traversal of a tree, create the binary tree
+
+## Example
+```
+preorder = [1, 2, 4, 3, 5, 6]
+inorder  = [4, 2, 1, 5, 3, 6]
+restoreBinaryTree(inorder, preorder) =
+    1
+   / \
+  2   3
+ /   / \
+4   5   6
+```
