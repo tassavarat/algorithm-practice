@@ -6,5 +6,6 @@
 !*/*.[ch]
 !*/*.asm
 !*/*.md
+!*/*.py
 !*/*.sh
 !*/Makefile

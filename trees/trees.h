@@ -4,10 +4,13 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+#define LEFT -1
+#define RIGHT 1
 
 /**
  * struct tree_integer - binary tree node
- *
  * @value: integer stored in node
  * @left: pointer to left child node
  * @right: pointer to right child node
@@ -18,6 +21,15 @@ typedef struct tree_integer {
 	struct tree_integer *right;
 } tree_integer;
 
+/**
+ * struct arr_integer - stores array and its size
+ * @size: size of array
+ * @arr: dynamic integer array
+ */
+typedef struct arr_integer {
+	int size;
+	int *arr;
+} arr_integer;
 
 /**
  * struct stack - doubly linked list
