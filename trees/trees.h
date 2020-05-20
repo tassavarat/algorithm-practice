@@ -21,6 +21,12 @@ typedef struct tree_integer {
 	struct tree_integer *right;
 } tree_integer;
 
+struct TreeNode {
+	int val;
+	struct TreeNode *left;
+	struct TreeNode *right;
+};
+
 /**
  * struct arr_integer - stores array and its size
  * @size: size of array
@@ -45,9 +51,13 @@ struct stack {
 	struct stack *next;
 };
 
+tree_integer *create_node(int value);
+void free_tree(tree_integer *tree);
 void print_t(struct tree_integer *tree);
-bool has_path_with_given_sum(struct tree_integer *t, int s);
-bool is_tree_symmetric(struct tree_integer *t);
-int kth_smallest_in_bst(struct tree_integer *t, int k);
+struct TreeNode *create_node_l(char *value);
+void free_tree_l(struct TreeNode *tree);
+struct TreeNode *create_tree(struct TreeNode **node, char *a[], size_t i,
+		size_t size);
+void print_t_l(struct TreeNode *tree);
 
 #endif /* TREES_H */
