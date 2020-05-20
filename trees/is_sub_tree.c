@@ -42,37 +42,6 @@ bool is_subtree(tree_integer *t1, tree_integer *t2)
 }
 
 /**
- * free_tree - frees binary tree
- * @tree: root node of tree to free
- */
-void free_tree(tree_integer *tree)
-{
-	if (!tree)
-		return;
-	free_tree(tree->left);
-	free_tree(tree->right);
-	free(tree);
-}
-
-/**
- * create_node - creates binary tree node
- * @value: int value to store
- *
- * Return: newly created node, NULL on failure
- */
-tree_integer *create_node(int value)
-{
-	tree_integer *new = malloc(sizeof(*new));
-
-	if (!new)
-		return NULL;
-	new->value = value;
-	new->left = NULL;
-	new->right = NULL;
-	return new;
-}
-
-/**
  * main - entry point
  *
  * Return: always 0
