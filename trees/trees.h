@@ -10,7 +10,18 @@
 #define RIGHT 1
 
 /**
- * struct tree_integer - binary tree node
+ * struct queue_s - queue linked list
+ * @node: pointer to edge node
+ * @next: pointer to next queue node
+ */
+typedef struct queue_s
+{
+	struct TreeNode *node;
+	struct queue_s *next;
+} queue_t;
+
+/**
+ * struct tree_integer - binary tree node codesignal
  * @value: integer stored in node
  * @left: pointer to left child node
  * @right: pointer to right child node
@@ -21,6 +32,12 @@ typedef struct tree_integer {
 	struct tree_integer *right;
 } tree_integer;
 
+/**
+ * struct tree_integer - binary tree node struct for leetcode
+ * @value: integer stored in node
+ * @left: pointer to left child node
+ * @right: pointer to right child node
+ */
 struct TreeNode {
 	int val;
 	struct TreeNode *left;
@@ -51,6 +68,7 @@ struct stack {
 	struct stack *next;
 };
 
+/* tree_shared */
 tree_integer *create_node(int value);
 void free_tree(tree_integer *tree);
 void print_t(struct tree_integer *tree);
