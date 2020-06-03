@@ -1,1 +1,1 @@
-# codesignal
+# algorithms from codesignal and leetcode
