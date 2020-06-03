@@ -40,3 +40,15 @@ Given a singly linked list of integers `l` and positive integer `n`, move the la
 ## Example
 * For `l = [1, 2, 3, 4, 5]` and `n = 3`, the output should be `rearrange_last_n(l, n) = [3, 4, 5, 1, 2]`
 * For `l = [1, 2, 3, 4, 5, 6, 7]` and `n = 1`, the output should be `rearrange_last_n(l, n) = [7, 1, 2, 3, 4, 5, 6]`
+
+# [delete_node](./delete_node.c)
+Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.
+
+## Example
+```
+Input: head = [4,5,1,9], node = 5
+Output: [4,1,9]
+
+Input: head = [4,5,1,9], node = 1
+Output: [4,5,9]
+```
