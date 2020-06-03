@@ -92,6 +92,8 @@ int main()
 	puts("Before");
 	print_t_l(root);
 	root = invertTree(root);
+	if (!root)
+		return 1;
 	puts("Inverted");
 	print_t_l(root);
 	free_tree_l(root);
