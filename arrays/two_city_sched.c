@@ -26,14 +26,13 @@ int compare(const void *pa, const void *pb)
  */
 int twoCitySchedCost(int costs[6][2], int costsSize, int *costsColSize)
 {
-	int i, min_cost;
+	int i, min_cost, mid;
 
 	qsort(costs, costsSize, *costsColSize * sizeof(**costs), compare);
 	min_cost = 0;
-	for (i = 0; i < costsSize / 2; ++i)
-		min_cost += costs[i][0];
-	while (i < costsSize)
-		min_cost += costs[i++][1];
+	mid = costsSize / 2;
+	for (i = 0; i < mid; ++i)
+		min_cost += costs[i][0] + costs[mid + i][1];
 	return min_cost;
 }
 
