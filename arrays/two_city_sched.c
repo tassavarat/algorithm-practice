@@ -29,9 +29,7 @@ int twoCitySchedCost(int costs[6][2], int costsSize, int *costsColSize)
 	int i, min_cost, mid;
 
 	qsort(costs, costsSize, *costsColSize * sizeof(**costs), compare);
-	min_cost = 0;
-	mid = costsSize / 2;
-	for (i = 0; i < mid; ++i)
+	for (i = min_cost = 0, mid = costsSize / 2; i < mid; ++i)
 		min_cost += costs[i][0] + costs[mid + i][1];
 	return min_cost;
 }
