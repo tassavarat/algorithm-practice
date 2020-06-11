@@ -1,6 +1,25 @@
 #include <stdio.h>
 
 /**
+ * calc_water - find trapped water at specified index and updates max height
+ * @height: array of height values
+ * @i: index for height
+ * @max: pointer to left or right max height
+ *
+ * Return: trapped water
+ */
+int calc_water(int *height, int i, int *max)
+{
+	int water = 0;
+
+	if (height[i] < *max)
+		water = *max - height[i];
+	else
+		*max = height[i];
+	return water;
+}
+
+/**
  * trap - compute how much water can be trapped
  * @height: array of height values
  * @heightSize: size of height array
@@ -14,20 +33,10 @@ int trap(int *height, int heightSize)
 	l = water = lmax = rmax = 0, r = heightSize - 1;
 
 	while (l < r) {
-		if (height[l] < height[r]) {
-			if (height[l] < lmax)
-				water += lmax - height[l];
-			else
-				lmax = height[l];
-			++l;
-		}
-		else {
-			if (height[r] < rmax)
-				water += rmax - height[r];
-			else
-				rmax = height[r];
-			--r;
-		}
+		if (height[l] < height[r])
+			water += calc_water(height, l++, &lmax);
+		else
+			water += calc_water(height, r--, &rmax);
 	}
 	return water;
 }
