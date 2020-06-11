@@ -90,3 +90,12 @@ The fourth person goes to city B for a cost of 20.
 
 The total minimum cost is 10 + 30 + 50 + 20 = 110 to have half the people interviewing in each city.
 ```
+
+# [trap_water](./trap_water.c)
+Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
+
+## Example
+```
+Input: [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+```
