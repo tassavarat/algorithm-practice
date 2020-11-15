@@ -79,7 +79,6 @@ int main()
 	char *a[] = {"1", "2", "3", "4", "5", "6", "7"};
 	struct Node *root = NULL;
 
-	printf("%lu\n", sizeof(a) / sizeof(*a));
 	root = create_tree(&root, a, sizeof(a) / sizeof(*a), 0);
 	if (!root)
 		return 1;
