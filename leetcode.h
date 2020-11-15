@@ -4,6 +4,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct Node {
+	int val;
+	struct Node *left;
+	struct Node *right;
+	struct Node *next;
+};
+
 /**
  * list_stack - stack of pointers to ListNode
  *
