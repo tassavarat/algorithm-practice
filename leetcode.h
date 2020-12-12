@@ -1,8 +1,10 @@
 #ifndef LEETCODE_H
 #define LEETCODE_H
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct Node {
 	int val;
