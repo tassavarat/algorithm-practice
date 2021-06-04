@@ -15,19 +15,21 @@ int removeDuplicates(int *nums, int numsSize)
 	return j;
 }
 
+void print_arr(const int *arr, const size_t n)
+{
+	size_t i;
+
+	for (i = 0; i < n; ++i)
+		printf("%i ", arr[i]);
+	putchar('\n');
+}
+
 int main()
 {
 	int num1[] = {1, 1, 2};
 	int num2[] = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-	int numsSize, i;
 
-	numsSize = removeDuplicates(num1, sizeof(num1) / sizeof(*num1));
-	for (i = 0; i < numsSize; ++i)
-		printf("%i ", num1[i]);
-	putchar('\n');
-	numsSize = removeDuplicates(num2, sizeof(num2) / sizeof(*num2));
-	for (i = 0; i < numsSize; ++i)
-		printf("%i ", num2[i]);
-	putchar('\n');
+	print_arr(num1, removeDuplicates(num1, sizeof(num1) / sizeof(*num1)));
+	print_arr(num2, removeDuplicates(num2, sizeof(num2) / sizeof(*num2)));
 	return 0;
 }
