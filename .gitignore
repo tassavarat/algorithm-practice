@@ -9,4 +9,5 @@
 !*/*.md
 !*/*.py
 !*/*.sh
+!*/*.go
 !*/Makefile
