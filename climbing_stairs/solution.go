@@ -22,12 +22,9 @@ func main() {
 	var n int
 
 	n = 2
-	fmt.Println("n =", n)
-	fmt.Printf("Got %d\nExpected 2\n", climbStairs(n))
+	fmt.Printf("n = %d\nGot %d\nExpected 2\n", n, climbStairs(n))
 	n = 3
-	fmt.Println("n =", n)
-	fmt.Printf("Got %d\nExpected 3\n", climbStairs(n))
+	fmt.Printf("n = %d\nGot %d\nExpected 3\n", n, climbStairs(n))
 	n = 4
-	fmt.Println("n =", n)
-	fmt.Printf("Got %d\nExpected 5\n", climbStairs(n))
+	fmt.Printf("n = %d\nGot %d\nExpected 5\n", n, climbStairs(n))
 }

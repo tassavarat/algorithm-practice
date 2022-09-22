@@ -19,13 +19,10 @@ int main()
 	int n;
 
 	n = 2;
-	printf("n = %d\n", n);
-	printf("Got %d\nExpected 2\n", climbStairs(n));
+	printf("n = %d\nGot %d\nExpected 2\n", n, climbStairs(n));
 	n = 3;
-	printf("n = %d\n", n);
-	printf("Got %d\nExpected 3\n", climbStairs(n));
+	printf("n = %d\nGot %d\nExpected 3\n", n, climbStairs(n));
 	n = 4;
-	printf("n = %d\n", n);
-	printf("Got %d\nExpected 5\n", climbStairs(n));
+	printf("n = %d\nGot %d\nExpected 5\n", n, climbStairs(n));
 	return 0;
 }
