@@ -13,7 +13,7 @@ void check(int *arr, size_t arr_size, int soln)
 {
 	int i, got = singleNumber(arr, arr_size);
 
-	printf("array: [");
+	printf("Array: [");
 	for (i = 0; i < arr_size - 1; ++i)
 		printf("%d ", arr[i]);
 	printf("%d]\nExpected: %d\tGot: %d\n", arr[i], soln, got);
